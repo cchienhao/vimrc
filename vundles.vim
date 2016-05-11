@@ -12,6 +12,7 @@ Plugin 'gmarik/vundle'
 Plugin 'Shougo/neocomplcache'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
+"Plugin 'cchienhao/cscopemaps'
 
 " snippets
 Plugin 'garbas/vim-snipmate'

@@ -13,7 +13,7 @@ syntax on
 "--------
 " color scheme
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -38,7 +38,7 @@ set report=0                                                      " always repor
 set nowrap                                                        " dont wrap lines
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
 set number                                                        " show line numbers
-set relativenumber                                                " show relativenumber
+"set relativenumber                                                " show relativenumber
 set showmatch                                                     " show matching bracket (briefly jump)
 set showcmd                                                       " show typed command in status bar
 set title                                                         " show file in titlebar
@@ -50,11 +50,11 @@ set directory=~/tmp,/tmp                                          " move swp fil
 set autoindent
 set expandtab       " expand tab to space
 set smartindent     " indent when
-set tabstop=8       " tab width
-set softtabstop=8   " backspace
-set shiftwidth=8    " indent width
+set tabstop=4       " tab width
+set softtabstop=4   " backspace
+set shiftwidth=4    " indent width
 " set textwidth=79
-" set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 
@@ -212,6 +212,7 @@ nnoremap ; :
 :command Qa qa
 :command QA qa
 
+
 " for macvim
 if has("gui_running")
     set go=aAce  " remove toolbar
@@ -233,3 +234,4 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
+source ~/.vim/cscope_maps.vim
