@@ -58,7 +58,7 @@ set shiftwidth=4    " indent width
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 
 set list
-set listchars=eol: ,tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:>-,trail:~,extends:>,precedes:<
 
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 
