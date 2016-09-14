@@ -48,13 +48,17 @@ set directory=~/tmp,/tmp                                          " move swp fil
 
 " Default Indentation
 set autoindent
-set expandtab       " expand tab to space
+"set expandtab       " expand tab to space
 set smartindent     " indent when
-set tabstop=4       " tab width
+set noexpandtab
+"set tabstop=4       " tab width
 set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
-" set textwidth=79
+ set textwidth=79
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
+
+set list
+set listchars=eol: ,tab:>-,trail:~,extends:>,precedes:<
 
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 
@@ -162,6 +166,10 @@ let g:SuperTabRetainCompletionType=2
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+
+" default filetype
+"autocmd BufNewFile,BufRead,BufEnter * set filetype=sh
+
 
 " Keybindings for plugin toggle
 nnoremap <F2> :set invpaste paste?<CR>

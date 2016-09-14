@@ -42,6 +42,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/syntastic'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'tpope/vim-sleuth'
 
 " Other Utils
 " Plugin 'humiaozuzu/fcitx-status'
