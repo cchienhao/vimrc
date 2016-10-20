@@ -48,19 +48,19 @@ set directory=~/tmp,/tmp                                          " move swp fil
 
 " Default Indentation
 set autoindent
-"set expandtab       " expand tab to space
+set expandtab       " expand tab to space
 set smartindent     " indent when
-set noexpandtab
-"set tabstop=4       " tab width
+"set noexpandtab
+set tabstop=4       " tab width
 set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
- set textwidth=79
+"set textwidth=79
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " syntax support
 
@@ -243,3 +243,13 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 source ~/.vim/cscope_maps.vim
+source ~/.vim/autoload_cscope.vim
+
+:autocmd BufWritePost *.[cChH],*.[cChH]{++,xx,pp} call UpdateCScope()
+
+function! UpdateCScope()
+  :silent !find $CSCOPE_DB -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > $CSCOPE_DB/cscope.files
+  :silent !cscope -bvq -i $CSCOPE_DB/cscope.files -f $CSCOPE_DB/cscope.out
+  :silent cs reset
+endfunction
+
